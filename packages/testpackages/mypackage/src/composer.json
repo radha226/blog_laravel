@@ -1,0 +1,7 @@
+{
+    "name": "testpackages/mypackage",
+    "description": "this is package",
+    "license": "mit",
+    "minimum-stability": "dev",
+    "require": {}
+}

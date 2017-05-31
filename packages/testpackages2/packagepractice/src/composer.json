@@ -1,0 +1,11 @@
+{
+    "name": "testpackages2/packagepractice",
+    "description": "this is my package",
+    "authors": [
+        {
+            "name": "Radha",
+            "email": "git@genx-infotech.com"
+        }
+    ],
+    "require": {}
+}
