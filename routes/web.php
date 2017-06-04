@@ -82,6 +82,9 @@
  	// front end home page
  	Route::get('/',['as'=>'home', 'uses'=>'UserController@homeblog']);
 
+ 	//category on sidebar
+ 	Route::get('category/{id}',['as'=>'category','uses'=>'UserController@categoryid']);
+
  	//comment front end page
  	
  	Route::post('comment/submit',['as'=>'comment.submit', 'uses'=>'UserController@commentsubmit']);
@@ -100,6 +103,6 @@ Route::post('registeruser',['as'=>'registeruser','uses'=>'Auth\RegisterControlle
 Route::get('logout','Auth\LoginController@logout');
 Auth::routes();
 
-// Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
-// Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 Route::get('/home', 'HomeController@index')->name('home');

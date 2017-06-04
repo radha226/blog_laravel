@@ -165,6 +165,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         TestPackages\Mypackages\Mycustompackage::class,
+        testpackages2\packagepractice\Myprovider2::class,
         /*
          * Package Service Providers...
          */
@@ -231,6 +232,7 @@ return [
          'Html' => Collective\Html\HtmlFacade::class,
          'Socialite' => Laravel\Socialite\Facades\Socialite::class,
          'MyCustomClass'=>TestPackages\Mypackages\Mycustomclass::class,
+         'Customclass' => testpackages2\packagepractice\Customclass::class,
 
     ],
 

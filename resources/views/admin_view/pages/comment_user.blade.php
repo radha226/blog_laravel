@@ -62,14 +62,15 @@
                                                 <td><?=$row['message']; ?></td>
                                                
                                              
+
                                                  <td>
                                                    @if($row['status']=='1')
 
-                                                <a href="comment_status/submit/<?=$row['id']; ?>"><span style="padding:10px;" class="label label-sm label-success">approved</span></a>
+                                                <a href="javascript:;"><span style="padding:10px;" class="label label-sm label-success">approved</span></a>
                                                 @endif
                                                  @if($row['status']=='0')
 
-                                                <a href="comment_status/submit/<?=$row['id']; ?>"><span style="padding:10px;" class="label label-sm label-danger">Disapproved</span></a>
+                                                <a href="javascript:;"><span style="padding:10px;" class="label label-sm label-danger">Disapproved</span></a>
                                                 @endif
                                                  </td>
                                                

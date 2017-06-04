@@ -30,16 +30,16 @@
 <li> <a href="home-full-width.html">Home (Full Width)</a> </li>
 </ul> --}}
 </li>
-<li class="dropdown">
+{{--<li class="dropdown">
 <a href="single_post" class="dropdown-toggle" data-toggle="dropdown">Single Post</a>
-{{-- <ul class="navigation__dropdown">
+ <ul class="navigation__dropdown">
 <li> <a href="single-post.html">Single Post</a> </li>
 <li> <a href="single-post-without-image.html">Single Post (No Image)</a> </li>
 <li> <a href="single-post-video.html">Single Post (Video)</a> </li>
 <li> <a href="single-post-full-width.html">Single Post (Full Width Image)</a> </li>
 <li> <a href="search-results.html">Search Results</a> </li>
-</ul> --}}
-</li>
+</ul> 
+</li>--}}
 
 {{-- <li class="">
 <a href="features.html" class="dropdown-toggle" data-toggle="dropdown">Features</a>

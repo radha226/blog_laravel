@@ -60,6 +60,11 @@
 		<td>Email</td>
 		<td>{!! Form::text('email',null,['placeholder'=>'Enter email name']) !!}</td>
 	</tr>
+    <tr>
+        <td>Image</td>
+        {{-- <td>{!!Form::text('img') !!}</td> --}}
+        <td>{!!Form::file('images') !!}</td>
+    </tr>
 	<tr>
 	<td colspan="2" style="width:auto;">
 	{!!Form::submit('Save User',['class'=>"btn btn-success btn-block"])!!}

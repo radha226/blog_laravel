@@ -22,7 +22,8 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "TestPackages\\Mypackages\\":"packages/testpackages/mypackage/src"
+            "TestPackages\\Mypackages\\":"packages/testpackages/mypackage/src",
+            "testpackages2\\packagepractice\\":"packages/testpackages2/packagepractice/src"
         }
     },
     "autoload-dev": {

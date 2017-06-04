@@ -30,13 +30,14 @@ class AuthController extends Controller
         // if ($authUser) {
         //     return $authUser;
         // }
-        
+        // dd($user);
         return User::create([
             'name'     => $user->name,
             'email'    => $user->email,
             'password' => Hash::make('secret'),
             'status' => 'user',
-            'images' => 'profile.jpg'
+            'images' => 'profile.jpg',
+            'api_token' => Hash::make(123456)
             /*'provider' => $provider,
             'provider_id' => $user->id*/
         ]);

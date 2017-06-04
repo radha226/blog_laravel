@@ -37,12 +37,12 @@ return [
     'facebook' => [
         'client_id'     => '337568313326596',
         'client_secret' => '6e14b17bff4a163a624faf8c0ddb21ec',
-        'redirect'      => 'http://blog.dev/auth/facebook/callback',
+        'redirect'      => 'http://blog-laravel.dev/auth/facebook/callback',
     ],
     'github' => [
         'client_id'     => '97e719123a032654ed59',
         'client_secret' => 'f29b325716fe047d486af72c2280a88a37e0956a',
-        'redirect'      => 'http://blog.dev/auth/github/callback',
+        'redirect'      => 'http://blog-laravel.dev/auth/github/callback',
     ],
 
 ];

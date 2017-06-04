@@ -58,21 +58,34 @@
                                                    
                                             <tr role="row" class="odd">
                                                 <td><div class="icheckbox_square-blue checked" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
-                                                <td class="sorting_1"><?=$row ?></td>
+                                                <td class="sorting_1"><?=$row['id']; ?></td>
                                                 <td><?=$row['message']; ?></td>
                                                
                                               
-                                               <!--  <td>32</td>
-                                                <td>20-05-2014</td>
-                                                <td>$112.40</td> -->
-                                                 @if($row['status']=='0')
-                                                <td><a href="comment_status/submit/<?=$row['id']; ?>"><span class="label label-sm label-danger">unproved</span></a>
                                                
-                                                @endif
-                                                   @if($row['status']=='1')
+                                              
+                                                <td>
+                                                   @if($row['status']=='0')
+                                                <a href="comment_status/submit/<?=$row['id']; ?>"><span class="label label-sm label-danger">Disapproved</span></a>
+                                               @endif
+                                               
+                                                @if($row['status']=='1')
                                                 <a href="comment_status/submit/<?=$row['id']; ?>"><span class="label label-sm label-success">approved</span></a>
+                                                   @endif
                                                 </td>
-                                                @endif
+
+                                                 <td>
+                                                    <a href="comment_listing/edit/{{$row['id'] }}"  class="btn btn-default btn-xs"><i class="fa fa-edit"></i>&nbsp;
+                                                        Edit
+                                                    </a>
+                                                      <a href="comment_listing/delete/{{$row['id'] }}"  class="btn btn-default btn-xs"><i class="fa fa-edit"></i>&nbsp;
+                                                       Delete
+                                                    </a>
+                                                    <a style="color: #FF9800; font-size: 15px;">
+                                                        {{Session::get('add')}}
+                                                    </a>
+                                                </td>
+                                                
                                             
                                             </tr>
                                            @endforeach

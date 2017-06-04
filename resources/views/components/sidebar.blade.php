@@ -1,20 +1,43 @@
 <div class="col-xs-12  col-md-4">
  
+ @if(Auth::guest())
 <div class="widget-author  boxed  push-down-30">
 <div class="widget-author__image-container">
 <div class="widget-author__avatar--blurred">
 <img src="images/dummy/about-1.jpg" alt="Avatar image" width="90" height="90">
 </div>
-<img class="widget-author__avatar" src="{{asset('template/images/dummy/about-1.jpg')}}" alt="Avatar image" width="90" height="90">
+<img class="widget-author__avatar" src="{{asset('images/profile.jpg')}}" alt="Avatar image" width="90" height="90">
 </div>
 <div class="row">
 <div class="col-xs-10  col-xs-offset-1">
-<h4>Timothy Miler</h4>
+<h4>Blog user</h4>
 <br><br>
-{{-- <p>User Interface Designer, Amateurish Poker Player and Imaginary Breakdancer ...</p>
- --}}</div>
 </div>
 </div>
+</div>
+@else
+	
+<div class="widget-author  boxed  push-down-30">
+<div class="widget-author__image-container">
+<div class="widget-author__avatar--blurred">
+<img src="images/dummy/about-1.jpg" alt="Avatar image" width="90" height="90">
+</div>
+<img class="widget-author__avatar" src="{{asset('images')}}/{{ Auth::user()->images}}" alt="Avatar image" width="90" height="90">
+</div>
+<div class="row">
+<div class="col-xs-10  col-xs-offset-1">
+<h4>{{ Auth::user()->name}}</h4>
+<br><br>
+</div>
+</div>
+</div>
+
+@endif
+
+
+
+
+
 <div class="sidebar  boxed  push-down-30">
 <div class="row">
 <div class="col-xs-10  col-xs-offset-1">
@@ -25,7 +48,7 @@
 @foreach(App\add_category::categorylist() as $key => $value)
 <li>
 
-<a href="#">{{$value}}&nbsp; {{-- <span class="widget-categories__text">(16)</span>  --}}</a>
+<a href="category/{{$key}}">{{$value}}&nbsp; {{-- <span class="widget-categories__text">(16)</span>  --}}</a>
 
 </li>
 @endforeach()

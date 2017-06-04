@@ -1,18 +1,18 @@
-<script src="{{asset('admin/global/js/jquery-1.10.2.min.js')}}"></script>
-<script src="{{asset('admin/global/js/jquery-migrate-1.2.1.min.js')}}"></script>
-<script src="{{asset('admin/global/js/jquery-ui.js')}}"></script>
-<script src="{{asset('admin/global/vendors/bootstrap/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('admin/global/vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js')}}"></script>
-<script src="{{asset('admin/global/js/html5shiv.js')}}"></script>
-<script src="{{asset('admin/global/js/respond.min.js')}}"></script>
-<script src="{{asset('admin/global/vendors/metisMenu/jquery.metisMenu.js')}}"></script>
-<script src="{{asset('admin/global/vendors/slimScroll/jquery.slimscroll.js')}}"></script>
-<script src="{{asset('admin/global/vendors/iCheck/icheck.min.js')}}"></script>
-<script src="{{asset('admin/global/vendors/iCheck/custom.min.js')}}"></script>
-<script src="{{asset('admin/assets/vendors/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
-<script src="{{asset('admin/assets/vendors/google-code-prettify/prettify.js')}}"></script>
-<script src="{{asset('admin/assets/vendors/jquery-cookie/jquery.cookie.js')}}"></script>
-<script src="{{asset('admin/assets/vendors/jquery.pulsate.js')}}"></script>
+<script src="{{asset('admin_temp/global/js/jquery-1.10.2.min.js')}}"></script>
+<script src="{{asset('admin_temp/global/js/jquery-migrate-1.2.1.min.js')}}"></script>
+<script src="{{asset('admin_temp/global/js/jquery-ui.js')}}"></script>
+<script src="{{asset('admin_temp/global/vendors/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin_temp/global/vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js')}}"></script>
+<script src="{{asset('admin_temp/global/js/html5shiv.js')}}"></script>
+<script src="{{asset('admin_temp/global/js/respond.min.js')}}"></script>
+<script src="{{asset('admin_temp/global/vendors/metisMenu/jquery.metisMenu.js')}}"></script>
+<script src="{{asset('admin_temp/global/vendors/slimScroll/jquery.slimscroll.js')}}"></script>
+<script src="{{asset('admin_temp/global/vendors/iCheck/icheck.min.js')}}"></script>
+<script src="{{asset('admin_temp/global/vendors/iCheck/custom.min.js')}}"></script>
+<script src="{{asset('admin_temp/assets/vendors/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+<script src="{{asset('admin_temp/assets/vendors/google-code-prettify/prettify.js')}}"></script>
+<script src="{{asset('admin_temp/assets/vendors/jquery-cookie/jquery.cookie.js')}}"></script>
+<script src="{{asset('admin_temp/assets/vendors/jquery.pulsate.js')}}"></script>
 @if(!empty(@$js))
 
 		@foreach($js as $script)

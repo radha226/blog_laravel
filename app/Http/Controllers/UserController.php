@@ -10,6 +10,9 @@ use App\add_category;
  use App\Mail\Blogposting;
  use Session;
 use MyCustomClass;
+use Customclass;
+use Carbon\Carbon;
+
 class UserController extends Controller
 {
     public function profileview($id){
@@ -22,13 +25,16 @@ class UserController extends Controller
     }
     public function profileedit($id){
     	$model=User::find($id);
+
     	//echo $model;
     	return view('admin_view.pages.profile_edit',['model'=>$model]);
 
     }
     public function profileupdate(request $request, $id){
     	$model=User::find($id);
+        $request->file('images')->move('images', $request->file('images')->getClientOriginalName());
     	$model->fill($request->except('_token'));
+        $model->images=$request->file('images')->getClientOriginalName();
     	$model->save();
          Session::flash('insert','Updated successfully!');
      return redirect('profile');
@@ -77,9 +83,17 @@ class UserController extends Controller
     }
     public function homeblog(){
     	//dd(MyCustomClass::testing());
+        // dd(CustomClass::testing());
+
     	  //$data=blog::all()->where('status',1);
-   $data=blog::with('users','category')->get()->where('status',1);
- // dd($data);
+
+        //$dt     = Carbon::now();
+      // $one_week_ago = Carbon::now()->subWeeks(4);
+       //echo $time=$dt->diffForHumans( $one_week_ago);   
+        //dd($time);
+   $data=blog::with('users','category')->where('status', 1)->get();
+    //$data=blog::with('users','category')->where('status', 1)->get();
+ //dd($data);
     	return view('pages.index')->with('data',$data);
     }
 
@@ -125,6 +139,12 @@ class UserController extends Controller
     public function commentlisting(){
     		 $listing=Comment::all()->where('status','0');
     	return view('admin_view.pages.comment_listing')->with('listing',$listing);
+    }
+    public function categoryid($id){
+        // $category=blog::where('category_id', $id)->get();
+        $category=blog::all()->where('category_id',$id);
+        //dd($category);
+     return view('pages.category')->with('category',$category);
     }
 
    }

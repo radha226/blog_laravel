@@ -6,7 +6,7 @@
 </head>
 <body>
 	
-	{!!Form::model($model,['method'=>'PATCH','route'=>['profile/update','id'=>$model->id]])!!}
+	{!!Form::model($model,['method'=>'PATCH','route'=>['profile/update','id'=>$model->id],'files' => true])!!}
 		@include('admin_view.pages._profile')
 			
 	{!!Form::close() !!}
