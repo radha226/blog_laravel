@@ -32,8 +32,8 @@
                                                 <p class="text-muted small"><?=Auth::user()->email; ?></p>
 
                                                 <div class="divider"></div>
-                                                <a href="profile">
-                                                    <button href="" class="btn btn-default btn-sm">Edit Profile
+                                                <a href="{{route('profile')}}">
+                                                    <button href="{{route('profile')}}" class="btn btn-default btn-sm">Edit Profile
                                                     </button>
                                                 </a></div>
                                         </div>
@@ -44,7 +44,7 @@
                                                 <div class="col-md-6 col-xs-6"><a href="password/reset">
                                                     <button class="btn btn-default btn-sm">{{-- Change Password --}}</button>
                                                 </a></div>
-                                                <div class="col-md-6 col-xs-6"><a href="logout">
+                                                <div class="col-md-6 col-xs-6"><a href="{{route('logout')}}">
                                                     <button href="logout"
                                                             class="btn btn-info btn-sm pull-right">Sign Out
                                                     </button>

@@ -45,19 +45,20 @@
 <a href="features.html" class="dropdown-toggle" data-toggle="dropdown">Features</a>
 </li> --}}
 <li class="">
-<a href="/about" class="dropdown-toggle" data-toggle="dropdown">About</a>
+
+ <a href="{{route('about')}}" class="dropdown-toggle" data-toggle="dropdown">About</a>
 </li>
 <li class="">
-<a href="/contact" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
+<a href="{{route('contact')}}" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
 </li>
 
 	@if(Auth::guest())
 
 <li class="">
-<a href="/login" class="dropdown-toggle" data-toggle="dropdown">login</a>
+<a href="{{route('login')}}" class="dropdown-toggle" data-toggle="dropdown">login</a>
 </li>
 <li class="">
-<a href="/register" class="dropdown-toggle" data-toggle="dropdown">register</a>
+<a href="{{route('register')}}" class="dropdown-toggle" data-toggle="dropdown">register</a>
 </li>
 	@else
 
@@ -65,7 +66,7 @@
 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" style="color:black;">{{ Auth::user()->name}}</a>
 </li>
 <li class="dropdown">
-<a href="/admin" class="dropdown-toggle" data-toggle="dropdown">My account</a>
+<a href="{{route('admin')}}" class="dropdown-toggle" data-toggle="dropdown">My account</a>
 {{-- <ul class="navigation__dropdown">
 <li> <a href="single-post.html">Single Post</a> </li>
 <li> <a href="single-post-without-image.html">Single Post (No Image)</a> </li>
@@ -74,7 +75,7 @@
 
 
 <li class="">
-<a href="logout" class="dropdown-toggle" data-toggle="dropdown">logout</a>
+<a href="{{route('logout')}}" class="dropdown-toggle" data-toggle="dropdown">logout</a>
 </li>
 @endif
 

@@ -1,5 +1,5 @@
 <?php
-	$menu='profile'
+	$menu='blog_listing'
 ?>
 @extends('admin_view.layouts.main')
 <!--BEGIN HORIZONTAL MENU-->

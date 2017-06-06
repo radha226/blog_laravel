@@ -1,3 +1,6 @@
+<?php
+use Carbon\Carbon;
+?>
 <div class="col-xs-12  col-md-4">
  
  @if(Auth::guest())
@@ -48,7 +51,7 @@
 @foreach(App\add_category::categorylist() as $key => $value)
 <li>
 
-<a href="category/{{$key}}">{{$value}}&nbsp; {{-- <span class="widget-categories__text">(16)</span>  --}}</a>
+<a href="{{route('category',['id'=>$key])}}">{{$value}}&nbsp; {{-- <span class="widget-categories__text">(16)</span>  --}}</a>
 
 </li>
 @endforeach()
@@ -69,32 +72,32 @@
 </li>
 
 </ul>
+{{-- {{App\blog::where(['status'=>1])->whereBetween('created_at',['created_at'=>Carbon::now()->subWeeks(8),Carbon::now()])->limit(1)->orderBy('id','desc')->get()}} 
+ --}}
+
  
+
 <div class="tab-content">
 <div class="tab-pane  fade  in  active" id="recent-posts">
+
+@foreach(App\blog::where(['status'=>1])->whereBetween('created_at',['created_at'=>Carbon::now()->subWeeks(200),Carbon::now()])->limit(3)->orderBy('id','desc')->get() as $key => $value ) 
+
 <div class="push-down-15">
-<img src="images/dummy-licensed/blog-image-small.jpg" alt="Posts">
+<img src="{{asset('images/')}}/{{$value['img']}}" alt="{{$value['title']}}" style="width:50px; height:50px;">
 <h5>
-<a href="single-post.html">This is a showcase of the most recent posts</a>
+<a href="single-post.html">{{$value['title']}}</a>
 </h5>
-<span class="widget-posts__time">19 hours ago</span>
+<span class="widget-posts__time">{{substr($value['desc'],0,10)}}...</span>
 </div>
-<div class="push-down-15">
-<img src="{{asset('template/images/dummy-licensed/blog-image-3-small.jpg')}}" alt="Posts">
-<h5>
-<a href="single-post.html">This is a showcase of the most recent posts</a>
-</h5>
-<span class="widget-posts__time">19 hours ago</span>
-</div>
-<div class="push-down-15">
-<img src="{{asset('template/images/dummy-licensed/blog-image-small.jpg')}}" alt="Posts">
-<h5>
-<a href="single-post.html">This is a showcase of the most recent posts</a>
-</h5>
-<span class="widget-posts__time">19 hours ago</span>
+@endforeach()
+
+
+
 </div>
 </div>
-<div class="tab-pane  fade" id="popular-posts">
+
+
+{{-- <div class="tab-pane  fade" id="popular-posts">
 <div class="push-down-15">
 <img src="{{asset('template/images/dummy-licensed/blog-image-3-small.jpg')}}" alt="Posts">
 <h5>
@@ -109,15 +112,11 @@
 </h5>
 <span class="widget-posts__time">12 hours ago</span>
 </div>
-<div class="push-down-15">
-<img src="{{asset('template/images/dummy-licensed/blog-image-3-small.jpg')}}" alt="Posts">
-<h5>
-<a href="single-post.html">This is a showcase of the most popular posts</a>
-</h5>
-<span class="widget-posts__time">19 hours ago</span>
+
 </div>
-</div>
-</div>
+ --}}
+
+
 </div>
 
  

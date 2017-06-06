@@ -1,5 +1,5 @@
 <?php
-	$menu='add_blog'
+	$menu='add_blog';
 ?>
 @extends('admin_view.layouts.main')
 <!--BEGIN HORIZONTAL MENU-->

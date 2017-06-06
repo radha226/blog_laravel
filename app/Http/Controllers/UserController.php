@@ -87,12 +87,10 @@ class UserController extends Controller
 
     	  //$data=blog::all()->where('status',1);
 
-        //$dt     = Carbon::now();
-      // $one_week_ago = Carbon::now()->subWeeks(4);
-       //echo $time=$dt->diffForHumans( $one_week_ago);   
-        //dd($time);
-   $data=blog::with('users','category')->where('status', 1)->get();
-    //$data=blog::with('users','category')->where('status', 1)->get();
+      
+   // $data=blog::with('users','category')->where(['status'=> 1])->whereBetween('created_at',['created_at'=>Carbon::now()->subWeeks(4),Carbon::now()])->get();
+   // dd($data);
+    $data=blog::with('users','category')->where('status', 1)->get();
  //dd($data);
     	return view('pages.index')->with('data',$data);
     }

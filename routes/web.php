@@ -30,46 +30,47 @@
 	// Route::get('/', function () {
 	//     return view('pages.index');
 	// });
-	Route::get('about', function () {
+	Route::get('about',['as'=>'about',function () {
 	    return view('pages.about');
-	});
-	Route::get('contact', function () {
+	}]);
+	Route::get('contact', ['as'=>'contact',function () {
 	    return view('pages.contact');
-	});
+	}]);
 	
 	Route::get('single_post/{id}',['as'=>'single_blog','uses'=>'UserController@single_blog']);
 
-	Route::get('login', function () {
+	Route::get('login',['as'=>'login',function () {
 	    return view('pages.index');
-	});
-	Route::get('register', function () {
+	}]);
+	Route::get('register',['as'=>'register', function () {
 	    return view('pages.index');
-	});
+	}]);
 
-	Route::get('/admin', function () {
+	Route::get('/admin', ['as'=>'admin',function () {
 		$plugins = [
 				'js' => ['jvectormap','gdp-data','flot','animateNumber','sparkline','skycons','main'],
 				'css'	=> []
 		];
 	    return view('admin_view.pages.dashboard',$plugins);
 
-	});
+	}]);
+	
 	Route::Post('profile/edit/{id}',['as'=>'profile/edit','uses'=>'UserController@profileedit']);
 	Route::patch('profile/update/{id}',['as'=>'profile/update','uses'=>'UserController@profileupdate']);
 	Route::post('profile/store',['as'=>'store.profile','uses'=>'UserController@profilsubmit']);
 	
- 	Route::get('profile', function () {
+ 	Route::get('profile', ['as'=>'profile', function () {
      return view('admin_view.pages.profile');
-	 });
- 	Route::get('categories', function () {
+	 }]);
+ 	Route::get('categories', ['as'=>'categories', function () {
      return view('admin_view.pages.add_category_admin');
-	 });
+	 }]);
  	Route::post('category/store',['as'=>'store.category','uses'=>'CategoryController@category']);
  	
  	// Blog routes
  	Route::get('blog',['as'=>'blog', 'uses'=>'UserController@bloghtml']);
  	Route::post('blog/submit',['as'=>'blog.submit', 'uses'=>'UserController@addblog']);
- 	Route::get('adminblog',['as'=>'blog', 'uses'=>'UserController@adminbloghtml']);
+ 	Route::get('adminblog',['as'=>'adminblog', 'uses'=>'UserController@adminbloghtml']);
  	Route::post('adminblog/submit',['as'=>'adminblog.submit', 'uses'=>'UserController@adminaddblog']);
  	Route::get('blog_status/submit/{id}',['as'=>'blog_status.submit', 'uses'=>'UserController@adminblogstatus']);
 
@@ -100,7 +101,7 @@
  	Route::get('comment_user',['as'=>'comment_user','uses'=>'UserController@comment_user']);
 
 Route::post('registeruser',['as'=>'registeruser','uses'=>'Auth\RegisterController@registeruser']);
-Route::get('logout','Auth\LoginController@logout');
+Route::get('logout',['as'=>'logout', 'uses'=>'Auth\LoginController@logout']);
 Auth::routes();
 
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
